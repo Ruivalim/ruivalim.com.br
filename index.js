@@ -41,9 +41,9 @@ async function initializePreferences() {
     const logo = document.querySelector('.navbar-brand img');
     const modeToggle = document.getElementById('mode-toggle');
     modeToggle.checked = storedTheme === 'dark';
-    applyTheme(storedTheme);
+    await applyTheme(storedTheme);
 
-    setLanguage(storedLanguage);
+    await setLanguage(storedLanguage);
     document.querySelectorAll('.language-button').forEach(button => {
         button.classList.toggle('active', button.id === `lang-${storedLanguage}`);
     });
@@ -52,8 +52,16 @@ async function initializePreferences() {
     closeLoader();
 }
 
-// Apply light/dark theme
-function applyTheme(theme) {
+function loadImage(src) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => resolve(src);
+        img.onerror = () => reject(new Error(`Failed to load image: ${src}`));
+    });
+}
+
+async function applyTheme(theme) {
     const navbar = document.querySelector('.navbar');
     const logo = document.querySelector('.navbar-brand img');
     document.body.classList.toggle('dark-mode', theme === 'dark');
@@ -61,14 +69,18 @@ function applyTheme(theme) {
     navbar.classList.toggle('navbar-dark', theme === 'dark');
     navbar.classList.toggle('navbar-light', theme === 'light');
 
-    if (theme === 'dark') {
-        logo.src = 'Branco.png';
-    } else {
-        logo.src = 'Preto.png';
+    const logoSrc = theme === 'dark' ? 'Branco.png' : 'Preto.png';
+
+    try {
+        await loadImage(logoSrc);
+        logo.src = logoSrc;
+    } catch (error) {
+        console.error(error.message);
     }
 
     localStorage.setItem('theme', theme);
 }
+
 
 document.getElementById('mode-toggle').addEventListener('change', function() {
     openLoader();
@@ -76,9 +88,9 @@ document.getElementById('mode-toggle').addEventListener('change', function() {
     closeLoader();
 });
 
-function setLanguage(language) {
+async function setLanguage(language) {
     localStorage.setItem('language', language);
-    loadTranslations(language);
+    await loadTranslations(language);
 }
 
 document.querySelectorAll('.language-button').forEach(button => {
