@@ -1,0 +1,21 @@
+{
+    "navigation": {
+      "about": "Über mich",
+      "projects": "Projekte",
+      "photography": "Fotografie"
+    },
+    "about": {
+      "heading": "Über mich",
+      "description1": "Hallo! Ich bin Rui Valim, ein leidenschaftlicher Software- und DevOps-Ingenieur mit fast einem Jahrzehnt Erfahrung in der Programmierung. Meine Reise führte mich durch verschiedene Branchen, darunter eine bedeutende Zeit bei Toyota, wo ich meine Fähigkeiten in Cloud Computing und Backend-Entwicklung verfeinerte. Derzeit arbeite ich als DevOps-Ingenieur bei NT Consult und beschäftige mich intensiv mit Kubernetes und Azure DevOps.",
+      "description2": "Ich habe umfangreiche Erfahrung in AWS, Azure, Kubernetes, Python, Typescript/Node.js und DevOps-Praktiken. Mein starker Hintergrund in der Backend-Entwicklung und Cloud-Infrastruktur ermöglicht es mir, komplexe Systeme effizient zu entwickeln und zu verwalten.",
+      "description3": "Neben dem Programmieren liebe ich es, die Welt durch meine Linse einzufangen, und ich freue mich darauf, meine fotografischen Arbeiten hier zu teilen.",
+      "contact": "E-Mail senden"
+    },
+    "projects": {
+      "heading": "Projekte"
+    },
+    "photography": {
+      "heading": "Fotografie"
+    }
+  }
+  

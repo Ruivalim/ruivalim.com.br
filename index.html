@@ -34,10 +34,21 @@
                     <a class="nav-link" href="#photography" data-i18n="navigation.photography">Photography</a>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-outline-secondary mx-2" id="toggle-language">PT / EN</button>
+                    <div class="language-toggle">
+                        <button id="lang-en" class="language-button active">EN</button>
+                        <button id="lang-pt" class="language-button">PT</button>
+                        <button id="lang-de" class="language-button">DE</button>
+                    </div>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-outline-secondary" id="toggle-mode" data-i18n="navigation.mode">Light / Dark</button>
+                    <div class="toggle-container">
+                        <input type="checkbox" id="mode-toggle" class="toggle-input">
+                        <label for="mode-toggle" class="toggle-label">
+                            <i class="fas fa-sun sun-icon"></i>
+                            <i class="fas fa-moon moon-icon"></i>
+                            <span class="toggle-circle"></span>
+                        </label>
+                    </div>
                 </li>
             </ul>
         </div>

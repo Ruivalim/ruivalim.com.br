@@ -2,8 +2,7 @@
     "navigation": {
         "about": "About Me",
         "projects": "Projects",
-        "photography": "Photography",
-        "mode": "Light / Dark" 
+        "photography": "Photography"
     },
     "about": {
       "heading": "About Me",

@@ -28,6 +28,10 @@ body {
   color: #000 !important;
 }
 
+.nav-item{
+  margin: 5px;
+}
+
 .header {
   padding-top: 128px !important;
   font-family: "Poppins", sans-serif;
@@ -242,4 +246,95 @@ footer {
 
 body.modal-open {
   overflow: hidden;
+}
+
+.toggle-container {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.toggle-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-bottom: 0;
+}
+
+.toggle-circle {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  background-color: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+.sun-icon {
+  color: #f39c12; 
+  font-size: 14px;
+}
+
+.moon-icon {
+  color: #555; 
+  font-size: 14px;
+}
+
+.toggle-input:checked + .toggle-label {
+  background-color: #333;
+}
+
+.toggle-input:checked + .toggle-label .toggle-circle {
+  transform: translateX(30px);
+}
+
+.toggle-input:checked + .toggle-label .sun-icon {
+  color: #999; 
+}
+
+.toggle-input:checked + .toggle-label .moon-icon {
+  color: #f1c40f; 
+}
+
+.language-button {
+  flex: 1;
+  padding: 5px 10px;
+  border: none;
+  background: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.language-button.active {
+  background: #333;
+  color: #fff;
+}
+
+.language-button:hover {
+  background: #ddd;
+}
+
+.language-button:not(.active):hover {
+  color: #000;
 }

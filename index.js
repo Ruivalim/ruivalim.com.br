@@ -15,7 +15,6 @@ async function loadTranslations(language) {
 
         const translations = await response.json();
         document.querySelectorAll('[data-i18n]').forEach(element => {
-            console.log(element)
             const translationKey = element.getAttribute('data-i18n');
             const keys = translationKey.split('.');
             let translatedText = translations;
@@ -34,26 +33,61 @@ async function loadTranslations(language) {
 async function initializePreferences() {
     openLoader();
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const systemLanguage = navigator.language.startsWith('pt') ? 'pt' : 'en';
+    const systemLanguage = navigator.language.startsWith('pt') ? 'pt' : navigator.language.startsWith('de') ? 'de' : 'en';
 
     const storedTheme = localStorage.getItem('theme') || (systemPrefersDark ? 'dark' : 'light');
     const storedLanguage = localStorage.getItem('language') || systemLanguage;
 
     const logo = document.querySelector('.navbar-brand img');
-    if (storedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        document.body.classList.remove('light-mode');
-        logo.src = 'Branco.png'; 
+    const modeToggle = document.getElementById('mode-toggle');
+    modeToggle.checked = storedTheme === 'dark';
+    applyTheme(storedTheme);
+
+    setLanguage(storedLanguage);
+    document.querySelectorAll('.language-button').forEach(button => {
+        button.classList.toggle('active', button.id === `lang-${storedLanguage}`);
+    });
+
+    await loadTranslations(storedLanguage);
+    closeLoader();
+}
+
+// Apply light/dark theme
+function applyTheme(theme) {
+    const navbar = document.querySelector('.navbar');
+    const logo = document.querySelector('.navbar-brand img');
+    document.body.classList.toggle('dark-mode', theme === 'dark');
+    document.body.classList.toggle('light-mode', theme === 'light');
+    navbar.classList.toggle('navbar-dark', theme === 'dark');
+    navbar.classList.toggle('navbar-light', theme === 'light');
+
+    if (theme === 'dark') {
+        logo.src = 'Branco.png';
     } else {
-        document.body.classList.add('light-mode');
-        document.body.classList.remove('dark-mode');
         logo.src = 'Preto.png';
     }
 
-    await loadTranslations(storedLanguage);
-    document.getElementById('toggle-language').textContent = storedLanguage === 'pt' ? 'EN / PT' : 'PT / EN';
-    closeLoader();
+    localStorage.setItem('theme', theme);
 }
+
+document.getElementById('mode-toggle').addEventListener('change', function() {
+    openLoader();
+    applyTheme(this.checked ? 'dark' : 'light');
+    closeLoader();
+});
+
+function setLanguage(language) {
+    localStorage.setItem('language', language);
+    loadTranslations(language);
+}
+
+document.querySelectorAll('.language-button').forEach(button => {
+    button.addEventListener('click', function() {
+        document.querySelectorAll('.language-button').forEach(btn => btn.classList.remove('active'));
+        this.classList.add('active');
+        setLanguage(this.id.split('-')[1]);
+    });
+});
 
 async function fetchGitHubRepos() {
     try {
@@ -89,40 +123,11 @@ async function fetchGitHubRepos() {
     }
 }
 
-document.getElementById('toggle-mode').addEventListener('click', function() {
-    openLoader();
-    const logo = document.querySelector('.navbar-brand img');
-
-    if (document.body.classList.contains('dark-mode')) {
-        document.body.classList.remove('dark-mode');
-        document.body.classList.add('light-mode');
-        logo.src = 'Preto.png';
-        localStorage.setItem('theme', 'light');
-    } else {
-        document.body.classList.remove('light-mode');
-        document.body.classList.add('dark-mode');
-        logo.src = 'Branco.png'; 
-        localStorage.setItem('theme', 'dark');
-    }
-    closeLoader();
-});
-
-document.getElementById('toggle-language').addEventListener('click', function() {
-    const currentLanguage = localStorage.getItem('language') || 'en';
-    const newLanguage = currentLanguage === 'en' ? 'pt' : 'en';
-
-    this.textContent = newLanguage === 'pt' ? 'EN / PT' : 'PT / EN';
-
-    localStorage.setItem('language', newLanguage);
-    loadTranslations(newLanguage);
-});
-
 document.querySelectorAll('.nav-link').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
         const targetSection = document.querySelector(this.getAttribute('href'));
-
         const offsetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - document.querySelector('.navbar').offsetHeight - 10;
 
         window.scrollTo({
@@ -144,7 +149,7 @@ async function loadImages() {
 
         const images = await response.json();
 
-        if(images.length === 0){
+        if (images.length === 0) {
             spinner.style.display = 'none';
             gallery.innerHTML = '<p>No data to display now.</p>';
             return;
@@ -181,10 +186,10 @@ function openModal(image) {
     const modalDescription = document.getElementById('modal-description');
     modalImage.src = image.src;
     modal.style.display = 'flex';
-    document.body.classList.add('modal-open'); 
-    if(image.description == null){
+    document.body.classList.add('modal-open');
+    if (image.description == null) {
         modalDescription.classList.add("hidden");
-    }else{
+    } else {
         modalDescription.classList.remove("hidden");
         modalDescription.innerText = image.description;
     }
