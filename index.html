@@ -1,90 +1,167 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rui Valim - DevOps Engineer & Amateur Photographer</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link href="./index.css" rel="stylesheet">
-</head>
-<body class="light-mode">
-
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./index.css" rel="stylesheet" />
+  </head>
+  <body class="light-mode">
     <div id="loader" class="loader">
-        <img src="Preto.png" alt="Loading Logo" class="loader-logo">
+      <img src="Preto.png" alt="Loading Logo" class="loader-logo" />
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="#">
-            <img src="Preto.png" alt="Rui Valim Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about" data-i18n="navigation.about">About Me</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects" data-i18n="navigation.projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#photography" data-i18n="navigation.photography">Photography</a>
-                </li>
-                <li class="nav-item">
-                    <div class="language-toggle">
-                        <button id="lang-en" class="language-button active">EN</button>
-                        <button id="lang-pt" class="language-button">PT</button>
-                        <button id="lang-de" class="language-button">DE</button>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="toggle-container">
-                        <input type="checkbox" id="mode-toggle" class="toggle-input">
-                        <label for="mode-toggle" class="toggle-label">
-                            <i class="fas fa-sun sun-icon"></i>
-                            <i class="fas fa-moon moon-icon"></i>
-                            <span class="toggle-circle"></span>
-                        </label>
-                    </div>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">
+        <img src="Preto.png" alt="Rui Valim Logo" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#about" data-i18n="navigation.about"
+              >About Me</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#articles" data-i18n="navigation.articles"
+              >Articles</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects" data-i18n="navigation.projects"
+              >Projects</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#photography"
+              data-i18n="navigation.photography"
+              >Photography</a
+            >
+          </li>
+          <li class="nav-item">
+            <div class="language-toggle">
+              <button id="lang-en" class="language-button active">EN</button>
+              <button id="lang-pt" class="language-button">PT</button>
+              <button id="lang-de" class="language-button">DE</button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <div class="toggle-container">
+              <input type="checkbox" id="mode-toggle" class="toggle-input" />
+              <label for="mode-toggle" class="toggle-label">
+                <i class="fas fa-sun sun-icon"></i>
+                <i class="fas fa-moon moon-icon"></i>
+                <span class="toggle-circle"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
     </nav>
 
     <header class="text-center py-5 header">
-        <h1>Rui Valim</h1>
-        <p class="lead">DevOps Engineer & Amateur Photographer</p>
+      <h1>Rui Valim</h1>
+      <p class="lead">DevOps Engineer & Amateur Photographer</p>
     </header>
 
     <section id="about" class="container my-5">
-        <div class="row">
+      <div class="row">
         <div class="col-md-3">
-        <img src="rui.jpeg" alt="Rui Valim" class="profile-image">
-    </div>
-    <div class="col-md-9">
-        <h2 data-i18n="about.heading">About Me</h2>
-        <p data-i18n="about.description1">Hello! I’m Rui Valim, a passionate Software and DevOps Engineer with almost a decade of experience in programming. My journey has taken me through various industries, including a significant tenure at Toyota, where I honed my skills in cloud computing and backend development. Currently, I’m contributing as a DevOps Engineer at NT Consult, working extensively with Kubernetes and Azure DevOps.</p>
-        <p data-i18n="about.description2">I have extensive expertise in AWS, Azure, Kubernetes, Python, Typescript/Node.js, and DevOps practices. My strong background in backend development and cloud infrastructure allows me to build and manage complex systems efficiently.</p>
-        <p data-i18n="about.description3">Apart from coding, I love capturing the world through my lens, and I’m excited to share my photography work here.</p>
-        <div class="mt-4">
-            <a href="mailto:r.valim.junior@gmail.com" target="_blank" class="btn btn-dark mr-2" >
-                <i class="fas fa-envelope"></i> <span  data-i18n="about.contact">Email Me</span>
-            </a>
-            <a href="https://www.linkedin.com/in/rui-valim" target="_blank" class="btn btn-dark mr-2">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/Ruivalim" target="_blank" class="btn btn-dark">
-                <i class="fab fa-github"></i> GitHub
-            </a>
+          <img src="rui.jpeg" alt="Rui Valim" class="profile-image" />
         </div>
-    </div></div>
+        <div class="col-md-9">
+          <h2 data-i18n="about.heading">About Me</h2>
+          <p data-i18n="about.description1">
+            Hello! I’m Rui Valim, a passionate Software and DevOps Engineer with
+            almost a decade of experience in programming. My journey has taken
+            me through various industries, including a significant tenure at
+            Toyota, where I honed my skills in cloud computing and backend
+            development. Currently, I’m contributing as a DevOps Engineer at NT
+            Consult, working extensively with Kubernetes and Azure DevOps.
+          </p>
+          <p data-i18n="about.description2">
+            I have extensive expertise in AWS, Azure, Kubernetes, Python,
+            Typescript/Node.js, and DevOps practices. My strong background in
+            backend development and cloud infrastructure allows me to build and
+            manage complex systems efficiently.
+          </p>
+          <p data-i18n="about.description3">
+            Apart from coding, I love capturing the world through my lens, and
+            I’m excited to share my photography work here.
+          </p>
+          <div class="mt-4">
+            <a
+              href="mailto:r.valim.junior@gmail.com"
+              target="_blank"
+              class="btn btn-dark mr-2"
+            >
+              <i class="fas fa-envelope"></i>
+              <span data-i18n="about.contact">Email Me</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/rui-valim"
+              target="_blank"
+              class="btn btn-dark mr-2"
+            >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a
+              href="https://github.com/Ruivalim"
+              target="_blank"
+              class="btn btn-dark mr-2"
+            >
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a
+              href="https://medium.com/@ruivalimjunior"
+              target="_blank"
+              class="btn btn-dark mr-2"
+            >
+              <i class="fab fa-medium"></i> Medium
+            </a>
+            <a
+              href="https://dev.to/ruivalim"
+              target="_blank"
+              class="btn btn-dark"
+            >
+              <i class="fab fa-dev"></i> Dev
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="articles" class="container my-5">
+      <h2 data-i18n="articles.heading">Articles</h2>
     </section>
 
     <section id="projects" class="container my-5">
-        <!-- <h2 data-i18n="projects.heading">Projects</h2>
+      <!-- <h2 data-i18n="projects.heading">Projects</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
@@ -96,39 +173,44 @@
                 </div>
             </div>
         </div> -->
-        <h2>Github</h2>
-        <div  id="repo-list"  class="row">
-        </div>
+      <h2>Github</h2>
+      <div id="repo-list" class="row"></div>
     </section>
 
     <section id="photography" class="container my-5">
-        <h2 data-i18n="photography.heading">Photography</h2>
-        <div id="photo-gallery" class="row position-relative">
-            <div id="loading-spinner" class="spinner-border text-dark" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+      <h2 data-i18n="photography.heading">Photography</h2>
+      <div id="photo-gallery" class="row position-relative">
+        <div
+          id="loading-spinner"
+          class="spinner-border text-dark"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
         </div>
+      </div>
     </section>
-    
 
     <footer>
-        <p>&copy; 2024 Rui Valim. All rights reserved.</p>
+      <p>&copy; 2024 Rui Valim. All rights reserved.</p>
     </footer>
-    
+
     <div id="image-modal" class="image-modal">
-        <div class="modal-content">
-            <button id="close-modal" class="close-button">
-                <i class="fas fa-times fa-fw"></i>
-            </button>
-            <img id="modal-image" src="" alt="Full Size" class="full-image">
-            <p id="modal-description" class="modal-description"></p>
-        </div>
+      <div class="modal-content">
+        <button id="close-modal" class="close-button">
+          <i class="fas fa-times fa-fw"></i>
+        </button>
+        <img id="modal-image" src="" alt="Full Size" class="full-image" />
+        <p id="modal-description" class="modal-description"></p>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

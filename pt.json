@@ -1,21 +1,24 @@
 {
-    "navigation": {
-      "about": "Sobre Mim",
-      "projects": "Projetos",
-      "photography": "Fotografia"
-    },
-    "about": {
-      "heading": "Sobre Mim",
-      "description1": "Olá! Sou Rui Valim, um apaixonado Engenheiro de Software e DevOps com quase uma década de experiência em programação. Minha jornada me levou por várias indústrias, incluindo uma passagem significativa pela Toyota, onde aperfeiçoei minhas habilidades em computação em nuvem e desenvolvimento backend. Atualmente, atuo como Engenheiro DevOps na NT Consult, trabalhando extensivamente com Kubernetes e Azure DevOps.",
-      "description2": "Tenho ampla experiência em AWS, Azure, Kubernetes, Python, Typescript/Node.js e práticas de DevOps. Meu forte conhecimento em desenvolvimento backend e infraestrutura de nuvem me permite construir e gerenciar sistemas complexos de forma eficiente.",
-      "description3": "Além de programar, adoro capturar o mundo através das minhas lentes, e estou animado para compartilhar meu trabalho fotográfico aqui.",
-      "contact": "Enviar Email"
-    },
-    "projects": {
-      "heading": "Projetos"
-    },
-    "photography": {
-      "heading": "Fotografia"
-    }
+  "navigation": {
+    "about": "Sobre Mim",
+    "projects": "Projetos",
+    "photography": "Fotografia",
+    "articles": "Artigos"
+  },
+  "about": {
+    "heading": "Sobre Mim",
+    "description1": "Olá! Sou Rui Valim, um apaixonado Engenheiro de Software e DevOps com quase uma década de experiência em programação. Minha jornada me levou por várias indústrias, incluindo uma passagem significativa pela Toyota, onde aperfeiçoei minhas habilidades em computação em nuvem e desenvolvimento backend. Atualmente, atuo como Engenheiro DevOps na NT Consult, trabalhando extensivamente com Kubernetes e Azure DevOps.",
+    "description2": "Tenho ampla experiência em AWS, Azure, Kubernetes, Python, Typescript/Node.js e práticas de DevOps. Meu forte conhecimento em desenvolvimento backend e infraestrutura de nuvem me permite construir e gerenciar sistemas complexos de forma eficiente.",
+    "description3": "Além de programar, adoro capturar o mundo através das minhas lentes, e estou animado para compartilhar meu trabalho fotográfico aqui.",
+    "contact": "Enviar Email"
+  },
+  "articles": {
+    "heading": "Artigos"
+  },
+  "projects": {
+    "heading": "Projetos"
+  },
+  "photography": {
+    "heading": "Fotografia"
   }
-  
+}
