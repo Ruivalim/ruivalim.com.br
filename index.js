@@ -266,5 +266,5 @@ window.addEventListener("load", async function () {
   await initializePreferences();
   await fetchMediumArticles();
   await fetchGitHubRepos();
-  await loadImages();
+  //await loadImages();
 });
