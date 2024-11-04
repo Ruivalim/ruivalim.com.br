@@ -1,7 +1,7 @@
 body {
   background-color: #ffffff;
   color: #333;
-  font-family: "Roboto", sans-serif;
+  font-family: "Tinos", serif;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -34,7 +34,7 @@ body {
 
 .header {
   padding-top: 128px !important;
-  font-family: "Poppins", sans-serif;
+  font-family: "Tinos", serif;
 }
 
 .btn-dark {
