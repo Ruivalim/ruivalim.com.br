@@ -1,0 +1,241 @@
+body {
+    background-color: #ffffff;
+    color: #333;
+    font-family: "Tinos", serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    .nav-link {
+        color: #333 !important;
+        font-weight: 500;
+
+        &:hover {
+            color: #000 !important;
+        }
+    }
+
+    .nav-item {
+        margin: 5px;
+    }
+}
+
+.header {
+    padding-top: 128px !important;
+    font-family: "Tinos", serif;
+}
+
+.btn-dark {
+    background-color: #333;
+    border-color: #333;
+    color: #fff;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: #555;
+    }
+}
+
+.portfolio-item {
+    img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.profile-image {
+    max-width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.light-mode {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+
+    .card {
+        background-color: #1e1e1e;
+        color: #ddd;
+        border: 1px solid #333;
+    }
+
+    .navbar {
+        background-color: #1e1e1e;
+        border-bottom: 1px solid #333;
+    }
+
+    .nav-link {
+        color: #ddd !important;
+    }
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.5s ease-out;
+    padding: 0 10px;
+
+    &.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .loader-logo {
+        min-width: 100px;
+        max-width: 350px;
+        animation: wave 2s ease-in-out infinite;
+        padding: 0 10px;
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+#loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.toggle-container {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 30px;
+    margin-right: 10px;
+
+    .toggle-input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+
+        &:checked+.toggle-label {
+            background-color: #333;
+
+            .toggle-circle {
+                transform: translateX(30px);
+            }
+
+            .sun-icon {
+                color: #999;
+            }
+
+            .moon-icon {
+                color: #f1c40f;
+            }
+        }
+    }
+
+    .toggle-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5px;
+        margin-bottom: 0;
+
+        .toggle-circle {
+            position: absolute;
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            background-color: white;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+
+        .sun-icon {
+            color: #f39c12;
+            font-size: 14px;
+        }
+
+        .moon-icon {
+            color: #555;
+            font-size: 14px;
+        }
+    }
+}
+
+.language-button {
+    flex: 1;
+    padding: 5px 10px;
+    border: none;
+    background: #f0f0f0;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &.active {
+        background: #333;
+        color: #fff;
+    }
+
+    &:hover {
+        background: #ddd;
+
+        &:not(.active) {
+            color: #000;
+        }
+    }
+}

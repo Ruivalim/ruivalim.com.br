@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block body %}
+<header class="text-center py-5 header">
+  <h1>Rui Valim</h1>
+  <p class="lead">DevOps Engineer</p>
+</header>
+
+<section id="about" class="container my-5">
+  <div class="row">
+    <div class="col-md-3">
+      <img src="rui.jpeg" alt="Rui Valim" class="profile-image" />
+    </div>
+    <div class="col-md-9">
+      <h2 data-i18n="about.heading">About Me</h2>
+      <p data-i18n="about.description1">
+        Hello! I’m Rui Valim, a passionate Software and DevOps Engineer with
+        almost a decade of experience in programming. My journey has taken
+        me through various industries, including a significant tenure at
+        Toyota, where I honed my skills in cloud computing and backend
+        development. Currently, I’m contributing as a DevOps Engineer at NT
+        Consult, working extensively with Kubernetes and Azure DevOps.
+      </p>
+      <p data-i18n="about.description2">
+        I have extensive expertise in AWS, Azure, Kubernetes, Python,
+        Typescript/Node.js, and DevOps practices. My strong background in
+        backend development and cloud infrastructure allows me to build and
+        manage complex systems efficiently.
+      </p>
+      <!--<p data-i18n="about.description3">
+        Apart from coding, I love capturing the world through my lens, and
+        I’m excited to share my photography work here.
+      </p>-->
+      <div class="mt-4">
+        <a
+          href="mailto:r.valim.junior@gmail.com"
+          target="_blank"
+          class="btn btn-dark mr-2"
+        >
+          <i class="fas fa-envelope"></i>
+          <span data-i18n="about.contact">Email Me</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/rui-valim"
+          target="_blank"
+          class="btn btn-dark mr-2"
+        >
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a
+          href="https://github.com/Ruivalim"
+          target="_blank"
+          class="btn btn-dark mr-2"
+        >
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a
+          href="https://medium.com/@ruivalimjunior"
+          target="_blank"
+          class="btn btn-dark mr-2"
+        >
+          <i class="fab fa-medium"></i> Medium
+        </a>
+        <a
+          href="https://dev.to/ruivalim"
+          target="_blank"
+          class="btn btn-dark mr-2"
+        >
+          <i class="fab fa-dev"></i> Dev
+        </a>
+        <a
+          href="./Rui Valim.pdf"
+          target="_blank"
+          class="btn btn-dark"
+          download="Rui Valim.pdf"
+        >
+        <i class="fas fa-download"></i>
+        <span data-i18n="about.resume">Resume</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="articles" class="container my-5">
+  <h2 data-i18n="articles.heading">Articles</h2>
+</section>
+
+<section id="projects" class="container my-5">
+  <!-- <h2 data-i18n="projects.heading">Projects</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Project Name</h5>
+                    <p class="card-text">Description of the project. Includes tech stacks like Python, Node.js, etc.</p>
+                    <a href="https://github.com/projectlink" class="btn btn-dark" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+  <h2>Github</h2>
+  <div id="repo-list" class="row"></div>
+</section>
+{% endblock %}

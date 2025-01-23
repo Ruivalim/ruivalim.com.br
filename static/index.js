@@ -194,77 +194,8 @@ document.querySelectorAll(".nav-link").forEach((anchor) => {
   });
 });
 
-async function loadImages() {
-  const gallery = document.getElementById("photo-gallery");
-  const spinner = document.getElementById("loading-spinner");
-
-  try {
-    spinner.style.display = "block";
-
-    const response = await fetch("/photography.json");
-    if (!response.ok) throw new Error("Failed to load images.");
-
-    const images = await response.json();
-
-    if (images.length === 0) {
-      spinner.style.display = "none";
-      gallery.innerHTML = "<p>No data to display now.</p>";
-      return;
-    }
-
-    gallery.innerHTML = "";
-    spinner.style.display = "none";
-
-    const randomImages = images.sort(() => 0.5 - Math.random()).slice(0, 9);
-
-    randomImages.forEach((image) => {
-      const card = document.createElement("div");
-      card.className = "col-md-4";
-
-      card.innerHTML = `
-                <div class="gallery-card">
-                    <img src="${image.src}" alt="Photography Image" class="card-img-top">
-                </div>
-            `;
-
-      card
-        .querySelector("img")
-        .addEventListener("click", () => openModal(image));
-      gallery.appendChild(card);
-    });
-  } catch (error) {
-    console.error("Error loading images:", error);
-    spinner.style.display = "none";
-    gallery.innerHTML = "<p>Unable to load images. Please try again later.</p>";
-  }
-}
-
-function openModal(image) {
-  const modal = document.getElementById("image-modal");
-  const modalImage = document.getElementById("modal-image");
-  const modalDescription = document.getElementById("modal-description");
-  modalImage.src = image.src;
-  modal.style.display = "flex";
-  document.body.classList.add("modal-open");
-  if (image.description == null) {
-    modalDescription.classList.add("hidden");
-  } else {
-    modalDescription.classList.remove("hidden");
-    modalDescription.innerText = image.description;
-  }
-}
-
-function closeModal() {
-  const modal = document.getElementById("image-modal");
-  modal.style.display = "none";
-  document.body.classList.remove("modal-open");
-}
-
-document.getElementById("close-modal").addEventListener("click", closeModal);
-
 window.addEventListener("load", async function () {
   await initializePreferences();
   await fetchMediumArticles();
   await fetchGitHubRepos();
-  //await loadImages();
 });
